@@ -4,9 +4,10 @@ services:
     ports:
       - "8080:80"
     volumes:
-      #- ./data:/usr/local/apache2/htdocs/data
-      #- ./geojson:/usr/local/apache2/htdocs/geojson
-      - ./data:/mnt/fsdh/data
-      - ./geojson:/mnt/fsdh/geojson
+    #local setup
+    #  - ./data:/mnt/fsdh/data
+    #  - ./geojson:/mnt/fsdh/geojson
+    #FSDH
+      - datahub-blob:/mnt/fsdh
 
       
