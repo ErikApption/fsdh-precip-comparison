@@ -1,0 +1,865 @@
+body
+   {
+   font-family: "Trebuchet MS", "Helvetica", "Arial", "Verdana", "sans-serif";
+   }
+
+div,span,h1,h2,h3,select
+   {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   }
+
+select
+   {
+   outline: 0;
+   display: inline-block;
+   margin: 0px;
+   padding: 0px 2px !important;
+   background-color: #FFF;
+   border: 1px solid #BBB;
+   border-radius: 4px;
+   text-align: left;
+   font-family: sans-serif;
+   font-size: 13px !important;
+   height: 26px;
+   line-height: 26px;
+   z-index: 10000;
+   text-align: center;
+   cursor: pointer;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   color: #333;
+   margin: 0px 2px 0px 0px;
+   vertical-align: top;
+   }
+
+select:hover
+   {
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 5px, inset rgba(80,160,240,0.7) 0px 0px 1px;
+   }
+
+/* Layout of main controls on map tab page */
+
+div#vw_control_div
+   {
+   position: absolute;
+   display: inline-block;
+   top: 3px;
+   left: 3px;
+   bottom: 3px;
+   width: 370px; 
+   border: 1px solid #c5c5c5;
+   border-radius: 5px;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   }
+
+div#vw_layer_div
+   {
+   position: absolute;
+   top: 3px;
+   left: 375px;
+   bottom: 3px;
+   width: 45px;
+   border: 1px solid #c5c5c5;
+   border-radius: 5px 5px 5px 5px;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   }
+
+div#vw_layer_div.leftmost
+   {
+   left: 3px;
+   }
+
+div#vw_map_container
+   {
+   position: absolute;
+   top: 3px;
+   left: 422px;
+   bottom: 35px;
+   right: 3px;
+   border: none;
+   }
+
+div#vw_map_container.leftmost
+   {
+   left: 50px;
+   }
+
+div#vw_map_container.copying
+   {
+   left: 0px;
+   right: 335px;
+   }
+
+div#vw_map_div
+   {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   bottom: 0px;
+   right: 0px;
+   border: 1px solid #c5c5c5;
+   border-radius: 5px 5px 0px 0px;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   }
+
+select#vw_base_layer_select
+   {
+   margin-top: 4px;
+   }
+
+fieldset
+   {
+   position: relative;
+   border: 1px solid #AAA;
+   border-radius: 5px;
+   margin: 5px 5px 10px 5px;
+   padding: 5px 0px 10px 0px;
+   text-align: center;
+   color: #555;
+   }
+
+div#vw_status_bar
+   {
+   position: absolute;
+   display: flex;
+   left: 422px;
+   bottom: 3px;
+   right: 3px;
+   height: 30px;
+   border: 1px solid #c5c5c5;
+   border-radius: 0px 0px 5px 5px;
+   text-align: center;
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   }
+
+div#vw_status_bar div
+   {
+   position: absolute;
+   display: inline-block;
+   padding: 0px 10px;
+   border: none;
+   text-align: center;
+   font-family: Arial, sans-serif;
+   height: 28px;
+   line-height: 28px;
+   min-width: 80px;
+   }
+
+div#vw_status_bar.leftmost
+   {
+   left: 82px;
+   border-top-left-radius: 5px;
+   }
+
+div.status
+   {
+   display: inline-block;
+   margin: 0px auto;
+   padding: 0px 10px;
+   border: none;
+   text-align: center;
+   font-family: Arial, sans-serif;
+   font-size: 18px;
+   line-height: 30px;
+   }
+
+div#vw_lat_lng
+   {
+   position: absolute;
+   right: 38px;
+   }
+
+div#vw_map_info
+   {
+   left: 8px;
+   font-size: 14px;
+   }
+
+div.button
+   {
+   display: inline-block;
+   width: 36px;
+   height: 36px;
+   margin: 0px 3px;
+   padding: 0px;
+   padding-top: 2px;
+   border: 1px solid #AAAAAA;
+   border-radius: 4px;
+   background-color: #EEEEEE;
+   background-image: linear-gradient(to top, #F0F0F0 20%, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   background-position: center;
+   background-repeat: no-repeat;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   opacity: 0.8;
+   overflow: hidden;
+   cursor: pointer;
+   text-align: center;
+   white-space: nowrap;
+   font-size: 18px;
+   line-height: 31px;
+   font-family: Arial,sans-serif
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-select: none;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   }
+
+div.button:hover
+   {
+   opacity: 1;
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 5px, inset rgba(80,160,240,0.7) 0px 0px 3px;
+   }
+
+div.button:active
+   {
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 3px, inset rgba(60,60,60,0.15) -4px -4px 40px;
+   opacity: 1;
+   }
+
+div.button.down
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: inset rgba(130,220,255,0.3) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+div.button.down:hover
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: rgba(50,255,70,0.8) 0px 0px 5px, inset rgba(180,240,255,0.5) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+.vw_button
+   {
+   display: inline-block;
+   width: 34px;
+   height: 34px;
+   margin: 2px -1px 3px -1px;
+   padding: 0px;
+   padding-top: 2px;
+   border: 1px solid #AAAAAA;
+   border-radius: 4px;
+   background-color: #EEEEEE;
+   background-image: linear-gradient(to top, #F0F0F0 20%, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   background-position: center;
+   background-repeat: no-repeat;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   opacity: 0.8;
+   overflow: hidden;
+   cursor: pointer;
+   text-align: center;
+   white-space: nowrap;
+   font-size: 14px;
+   }
+
+.vw_button:hover
+   {
+   opacity: 1;
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 5px, inset rgba(80,160,240,0.7) 0px 0px 3px;
+   }
+
+.vw_button:active
+   {
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 3px, inset rgba(60,60,60,0.15) -4px -4px 40px;
+   opacity: 1;
+   }
+
+.vw_button.inactive
+   {
+   opacity: 0.7;
+   -webkit-filter: grayscale(90%);
+   -moz-filter: grayscale(90%);
+   -ms-filter: grayscale(90%);
+   -o-filter: grayscale(90%);
+   filter: grayscale(90%);
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   cursor: default;
+   color: #AAA;
+   }
+
+.vw_button.inactive:hover
+   {
+   opacity: 0.7;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   }
+
+.vw_button.inactive:active
+   {
+   opacity: 0.7;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   }
+
+.vw_button.down
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: inset rgba(130,220,255,0.3) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+.vw_button.down:hover
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: rgba(50,255,70,0.8) 0px 0px 5px, inset rgba(180,240,255,0.5) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+div.vw_layer_button
+   {
+   position: relative;
+   width: 36px;
+   height: 50px;
+   margin: 5px 3px 0px 3px;
+   padding: 0px;
+   overflow: visible;
+   opacity: 1.0;
+   }
+
+div.vw_layer_button.selected
+   {
+   box-shadow: rgb(60,120,255) 0px 0px 4px;
+   }
+
+div.vw_layer_button .upper_layer
+   {
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   width: 30px;
+   height: 30px;
+   margin: 0px;
+   background-color: #FAFAFA;
+   background-image: none;
+   border-radius: 3px;
+   box-shadow: none;
+   opacity: 1.0;
+   }
+
+div.vw_layer_button .upper_layer.basemap
+   {
+   background-image: url(images/icons/clearscene.png);
+   }
+
+div.vw_layer_button .upper_layer.pr
+   {
+   background-image: url(images/icons/precip.png);
+   }
+
+div.vw_layer_button .upper_layer.ivt
+   {
+   background-image: url(images/icons/ivt.png);
+   }
+
+div.vw_layer_button .upper_layer.ivf
+   {
+   background-image: url(images/icons/ivf.png);
+   }
+
+div.vw_layer_button .upper_layer.regions
+   {
+   background-image: url(images/icons/regions.png);
+   }
+
+div.vw_layer_button .upper_layer.alex
+   {
+   background-image: url(images/icons/circle_gold.png);
+   background-position: center;
+   }
+
+div.vw_layer_button .upper_layer.stations
+   {
+   background-image: url(images/icons/circle_white.png);
+   background-position: center;
+   }
+
+div.vw_layer_button .upper_layer.down
+   {
+   background-image: url(images/icons/x.png);
+   }
+
+div.vw_layer_button .upper_layer.down.basemap
+   {
+   background-image: url(images/icons/x.png), url(images/icons/clearscene.png);
+   }
+
+div.vw_layer_button .upper_layer.down.alex
+   {
+   background-image: url(images/icons/x.png), url(images/icons/circle_gold.png);
+   }
+
+div.vw_layer_button .upper_layer.down.pr
+   {
+   background-image: url(images/icons/x.png), url(images/icons/precip.png);
+   }
+
+div.vw_layer_button .upper_layer.down.ivt
+   {
+   background-image: url(images/icons/x.png), url(images/icons/ivt.png);
+   }
+
+div.vw_layer_button .upper_layer.down.ivf
+   {
+   background-image: url(images/icons/x.png), url(images/icons/ivf.png);
+   }
+
+div.vw_layer_button .upper_layer.down.regions
+   {
+   background-image: url(images/icons/x.png), url(images/icons/regions.png);
+   }
+
+div.vw_layer_button .upper_layer.down.stations
+   {
+   background-image: url(images/icons/x.png), url(images/icons/circle_white.png);
+   }
+
+div.vw_layer_button .lower_layer
+   {
+   position: absolute;
+   bottom: 2px;
+   left: 2px;
+   width: 30px;
+   height: 13px;
+   margin: 0px;
+   background-color: #FAFAFA;
+   background-image: none;
+   border-radius: 3px;
+   box-shadow: none;
+   }
+
+div.vw_layer_button .lower_layer.down
+   {
+   background-color: #AACAFA;
+   }
+
+.vw_half_width_fieldset
+   {
+   width: 45%;
+   max-width: 45%;
+   height: 60px;
+   padding: 0px;
+   margin: 0px 3px;
+   display: inline-block;
+   position: relative;
+   overflow: hidden;
+   }
+
+.vw_half_width_fieldset legend
+   {
+   margin-left: 10px;
+   }
+
+.vw_full_width_fieldset
+   {
+   display: inline-block;
+   position: relative;
+   width: 94%;
+   max-width: 94%;
+   height: 60px;
+   padding: 5px 0px;
+   margin: 0px 3px;
+   overflow: hidden;
+   }
+
+.vw_layer_opacity_slider
+   {
+   width: 80%;
+   margin: 13px 20px 10px 20px;
+   }
+
+canvas.vw_colour_picker
+   {
+   margin-top: 2px;
+   cursor: pointer;
+   border: 1px solid #AAA;
+   }
+
+.leaflet-container.crosshair-cursor-enabled { cursor: crosshair !important; }
+
+.leaflet-container {background-color: #FFF;}
+
+.leaflet-image-layer
+   {
+   image-rendering: -webkit-optimize-contrast;
+   image-rendering: crisp-edges;
+   image-rendering: pixelated;
+   image-rendering: -moz-crisp-edges;
+   image-rendering: -o-crisp-edges;
+   }
+
+.leaflet-image-layer.default
+   {
+   image-rendering: auto;
+   }
+
+div#vw_control_show_hide
+   {
+   position: absolute;
+   right: 6px;
+   bottom: 1px;
+   font-size: 18px;
+   color: #777;
+   width: 27px;
+   height: 29px;
+   line-height: 25px;
+   padding-right: 2px;
+   z-index: 2000;
+   }
+
+div#vw_control_show_hide.controls_hidden
+   {
+   left: 52px;
+   bottom: 1px;
+   padding-right: 0px;
+   padding-left: 3px;
+   }
+
+.leaflet-container img.leaflet-image-layer
+   {
+   max-width: none !important;
+   }
+
+div.remove_layer
+   {
+   position: absolute;
+   top: -16px;
+   right: 3px;
+   width: 22px;
+   height: 22px;
+   margin: 0px;
+   background-color: #EEEEEE;
+   background-image: linear-gradient(to top, #F0F0F0 20%, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   border-radius: 3px;
+   box-shadow: none;
+   font-size: 16px;
+   line-height: 18px;
+   text-align: center;
+   padding: 0px 0px 1px 1px;
+   opacity: 0.6;
+   z-index: 10000;
+   }
+
+div.remove_layer:hover
+   {
+   opacity: 1;
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 5px, inset rgba(80,160,240,0.7) 0px 0px 3px;
+   }
+
+div.remove_layer:active
+   {
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 3px, inset rgba(60,60,60,0.15) -4px -4px 40px;
+   opacity: 1;
+   }
+
+
+div#time_label_container
+   {
+   position: absolute;
+   bottom: 108px;
+   left: 10px;
+   width: 280px;
+   height: 40px;
+   z-index: 9999;
+   border: 2px solid rgba(0, 0, 0, 0.4);
+   background-color: rgba(255, 255, 255, 0.8);
+   border-radius: 6px;
+   padding: 2px 0px 4px 0px;
+   font-size: 24px;
+   color: #333;
+   user-select: none;
+   text-align: center;
+   vertical-align: middle;
+   }
+
+fieldset#time_label_container
+   {
+   position: absolute;
+   bottom: 108px;
+   left: 10px;
+   width: 280px;
+   height: 54px;
+   z-index: 9999;
+   border: 2px solid rgba(0, 0, 0, 0.4);
+   background-color: rgba(255, 255, 255, 0.8);
+   border-radius: 6px;
+   padding: 0px;
+   font-size: 24px;
+   color: #333;
+   user-select: none;
+   text-align: center;
+   vertical-align: middle;
+   }
+
+fieldset#time_label_container legend
+   {
+   font-size: 18px;
+   margin-left: 5px;
+   margin-bottom: 0px;
+   color: #333;
+   }
+
+fieldset#time_label_container div#time_label
+   {
+   font-size: 24px;
+   margin-top: -8px;
+   }
+
+div#time_container
+   {
+   position: absolute;
+   bottom: 10px;
+   left: 10px;
+   width: 280px;
+   height: 90px;
+   z-index: 9999;
+   border: 2px solid rgba(0, 0, 0, 0.4);
+   background-color: rgba(255, 255, 255, 0.8);
+   border-radius: 6px;
+   padding: 5px 7px;
+   font-size: 20px !important;
+   user-select: none;
+   }
+
+div#time_slider
+   {
+   display: inline-block;
+   width: 90%;
+   margin: 6px auto;
+   }
+
+.ui-slider-horizontal
+   {
+   box-sizing: border-box;
+   cursor: pointer !important;
+   user-select: none;
+   height: 0.7em;
+   }
+
+.ui-slider-handle
+   {
+   cursor: pointer !important;
+   }
+
+div#opacity_slider
+   {
+   display: inline-block !important;
+   width: 90% !important;
+   margin: 5px 0px 0px 7px;
+   }
+
+div.time_button
+   {
+   box-sizing: border-box;
+   display: inline-block;
+   width: 34px;
+   height: 34px;
+   margin: 2px -1px 3px 4px;
+   padding: 0px;
+   padding-top: 2px;
+   border: 1px solid #AAAAAA;
+   border-radius: 4px;
+   background-color: #FFFFFF;
+   background-image: linear-gradient(to top, #F0F0F0 20%, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   background-position: center;
+   background-repeat: no-repeat;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   opacity: 0.8;
+   overflow: hidden;
+   cursor: pointer;
+   text-align: center;
+   white-space: nowrap;
+   font-size: 14px;
+   }
+
+div.time_button:hover
+   {
+   opacity: 1;
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 5px, inset rgba(80,160,240,0.7) 0px 0px 3px;
+   }
+
+div.time_button:active
+   {
+   box-shadow: rgba(80,160,240,0.7) 0px 0px 3px, inset rgba(60,60,60,0.15) -4px -4px 40px;
+   opacity: 1;
+   }
+
+div.time_button.inactive
+   {
+   opacity: 0.7;
+   -webkit-filter: grayscale(90%);
+   -moz-filter: grayscale(90%);
+   -ms-filter: grayscale(90%);
+   -o-filter: grayscale(90%);
+   filter: grayscale(90%);
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   cursor: default;
+   }
+
+div.time_button.inactive:hover
+   {
+   opacity: 0.7;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   }
+
+div.time_button.inactive:active
+   {
+   opacity: 0.7;
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   }
+
+div.time_button.down
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: inset rgba(130,220,255,0.3) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+div.time_button.down:hover
+   {
+   border-top: 1px solid #909090;
+   border-left: 1px solid #909090;
+   border-bottom: 1px solid #BBB;
+   border-right: 1px solid #BBB;
+   box-shadow: rgba(50,255,70,0.8) 0px 0px 5px, inset rgba(180,240,255,0.5) -4px -4px 40px;
+   opacity: 1.0;
+   }
+
+div.time_button.time
+   {
+   margin-top: 3px;
+   width: 34px;
+   height: 34px;
+   }
+
+div.time_button.time.inactive
+   {
+   opacity: 0.7;
+   -webkit-filter: grayscale(90%);
+   -moz-filter: grayscale(90%);
+   -ms-filter: grayscale(90%);
+   -o-filter: grayscale(90%);
+   filter: grayscale(90%);
+   box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 2px;
+   cursor: default;
+   }
+
+div#tc_first
+   {
+   background-image: url("images/time_controls/first.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_previous
+   {
+   background-image: url("images/time_controls/previous.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_reverse
+   {
+   background-image: url("images/time_controls/reverse.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_pause
+   {
+   background-image: url("images/time_controls/pause.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_play
+   {
+   background-image: url("images/time_controls/play.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_next
+   {
+   background-image: url("images/time_controls/next.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_last
+   {
+   background-image: url("images/time_controls/last.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div#tc_increment_step
+   {
+   font-size: 20px;
+   color: #4A6BAE;
+   line-height: 28px;
+   margin-left: 8px;
+   }
+
+div#tc_compare
+   {
+   background-position: top 2px left 2px;
+   margin-left: 8px;
+   background-image: url("images/compare.png"), linear-gradient(to top, #E0E0E0 40%, #F8F8F8 60%, #FFFFFF 90%);
+   }
+
+div.vw_camera
+   {
+   position: absolute;
+   bottom: 1px;
+   right: 3px;
+   width: 30px;
+   min-width: 30px;
+   height: 24px;
+   border: none;
+   border-radius: 3px;
+   background-image: url("images/camera.png");
+   background-position: center;
+   background-repeat: no-repeat;
+   cursor: pointer;
+   opacity: 0.7;
+   }
+
+div#vw_status_bar #vw_map_camera
+   {
+   width: 30px;
+   min-width: 30px;
+   }
+
+div#ar_plot_tab #vw_plot_camera
+   {
+   width: 30px;
+   min-width: 30px;
+   bottom: 7px;
+   right: 7px;
+   }
+
+div.vw_camera:hover
+   {
+   opacity: 1.0;
+   }
+
+div.vw_camera:active
+   {
+   filter: hue-rotate(180deg) drop-shadow( 0px 0px 5px rgba(80,160,240,0.7));
+   }

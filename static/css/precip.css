@@ -1,0 +1,30 @@
+div#pr_show_plot
+   {
+   width: 80px;
+   height: 24px;
+   line-height: 22px;
+   font-size: 12px;
+   padding: 0px 3px;
+   margin-top: 5px;
+   }
+   
+div#pr_show_no_precip, #pr_hide_no_precip  
+   {
+   width: 170px;
+   height: 24px;
+   line-height: 22px;
+   font-size: 12px;
+   padding: 0px 3px;
+   margin-top: 5px;
+   }
+
+div.anim_mode
+   {
+   width: 80px;
+   height: 24px;
+   line-height: 22px;
+   font-size: 12px;
+   padding: 0px 3px;
+   margin-top: 5px;
+   }
+    

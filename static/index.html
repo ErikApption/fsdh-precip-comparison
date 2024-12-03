@@ -1,0 +1,214 @@
+<!DOCTYPE html> 
+
+<html lang="en">
+   <head>
+      <title>Precipitation Observation</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>Precipitation Observation</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <link rel="icon" type="image/ico" href="css/images/ar_ecar.ico">
+      <link rel="stylesheet" type="text/css" href="css/ar_ecar.min.css">
+      <link rel="stylesheet" type="text/css" href="css/precip.css">
+      <script src="js/ar_ecar.min.js"></script>
+   </head>
+   <body>
+      <div id="ar_tabs">
+         <ul>
+            <li><a href="#ar_map_tab" title="Show map">Map</a></li>
+            <li id="ar_plot_tab_li"><a href="#ar_plot_tab" title="Show plot from the selected station">Plot</a></li>
+            <li id="ar_document_tab_li"><a href="#ar_document_tab" title="Show selected station document">Doc</a></li>
+            <li><a href="#ar_guide_tab" title="Show project guidebook">Guide</a></li>
+         </ul>
+         <div id="ar_map_tab">
+            <div id="ar_map_tab_content" class="ar_tab_content">
+               <div id="vw_control_div">
+                  <fieldset id="vw_project_fieldset">
+                     <legend>Stationary Display</legend>
+                     <select id="pr_date_select" title="Select a date"></select>
+                     <select id="pr_time_select" title="Select a time point"></select><br>
+                     <div id="pr_show_plot" class="button radio show_plot_button" title="Click to see the recipitation plot of selected date, time">Refresh</div><br>
+                     <div id="pr_show_no_precip" class="button radio show_nodata_button down" title="Click to see stations with no precipitation">Show no-precipitation stations</div>
+                     <div id="pr_hide_no_precip" class="button radio show_nodata_button" title="Click to see only stations with precipitation">Hide no-precipitation stations</div>
+                    
+                     <!--
+                     <select id="ar_project_select" title="Select scale to display"></select>
+                     <div id="ar_alex_mode_container">
+                        <div id="ar_alex_obs" class="button radio alex_button down" title="Show Japanese Reanalysis Data (JRA) 1980-2020 on station click">obs (JRA)</div><div id="ar_alex_rcm" class="button radio alex_button" title="Show Canadian Climate Model 1950-2100 ensemble result on station click">CanRCM4</div>
+                     </div>
+                  -->
+                  
+                  </fieldset>
+                <!-- 
+                  <fieldset id="ar_mrp_fieldset">
+                     <legend>Model</legend>
+                     <select id="ar_model_select" title="Select model of interest"></select>
+                     <select id="ar_run_select" title="Choose from available runs for the selected model">
+                        <option value="2021101712">2021101712</option>
+                     </select>
+                     <select id="ar_product_select" title="Choose a product to display">
+                        <option value="ecar_wgt">ECAR wgt</option>
+                        <option value="ecar_max">ECAR max</option>
+                     </select>
+                  </fieldset>
+               --> 
+                  <fieldset id="pr_compare_mode_fieldset">
+                     <legend>Precipitation type comparison</legend>
+                     <!-- div id="pr_ai_approach" class="button radio down ivt_mode">AI approach</div><div id="pr_weon" class="button radio ivt_mode">Weon</div -->
+                     <div id="pr_ai_approach" class="button radio down anim_mode">AI approach</div><div id="pr_weong" class="button radio anim_mode">WEonG</div><div id="pr_burrows" class="button radio anim_mode">Burrows</div><div id="pr_hrdps_ai" class="button radio down anim_mode">HRDPS_AI</div>
+                  </fieldset>
+
+                  <fieldset id="vw_animation_fieldset">
+                     <legend>Precipitation type animation</legend>
+                  </fieldset>
+                  
+                  <!-- fieldset id="ar_missing_mode_fieldset">
+                     <legend>Missing data display</legend>
+                     <div id="ar_missing_mode_a" class="button radio down missing_mode" title="Show maximum scales only if all data are available">Show as missing</div><div id="ar_missing_mode_v" class="button radio missing_mode" title="Show maximum available scales">Highest available</div>
+                  </fieldset>
+               
+                  <fieldset id="ar_weighting_fieldset">
+                     <legend>Scale weighting</legend>
+                     <div id="ar_weighting_container">
+                        <div>AR scale: <div id="ar_ivt_slider" class="ar_weighting_slider"></div><div id="ar_ivt_weight" class="ar_weighting_value"></div></div>
+                        <div>Duration: <div id="ar_dur_slider" class="ar_weighting_slider"></div><div id="ar_dur_weight" class="ar_weighting_value"></div></div>
+                        <div>Antecedent: <div id="ar_ant_slider" class="ar_weighting_slider"></div><div id="ar_ant_weight" class="ar_weighting_value"></div></div>
+                        <div>Return pd.: <div id="ar_ret_slider" class="ar_weighting_slider"></div><div id="ar_ret_weight" class="ar_weighting_value"></div></div>
+                        <div>Total precip: <div id="ar_tot_slider" class="ar_weighting_slider"></div><div id="ar_tot_weight" class="ar_weighting_value"></div></div>
+                        <div>Max. rate: <div id="ar_mpr_slider" class="ar_weighting_slider"></div><div id="ar_mpr_weight" class="ar_weighting_value"></div></div>
+                     </div>
+                     <div id="ar_weighting_default" class="button">Reset</div>
+                  </fieldset -->
+                  
+                  <!--
+                  <fieldset id="vw_animation_fieldset">
+                     <legend>IVT animation</legend>
+                  </fieldset>
+                  -->
+
+
+                  <fieldset id="vw_layer_fieldset">
+                     <legend id="vw_active_layer_title">Active layer</legend>
+                     <fieldset id="vw_base_layer_fieldset" class="vw_full_width_fieldset basemap">
+                        <legend>Source</legend>
+                        <select id="vw_base_layer_select"></select>
+                     </fieldset>
+                     <fieldset class="vw_half_width_fieldset stations alex regions ivt basemap">
+                        <legend>Opacity</legend>
+                        <div id="vw_layer_opacity_slider" class="ar_opacity_slider"></div>
+                     </fieldset>
+                     <fieldset class="vw_half_width_fieldset stations">
+                        <legend>Filter</legend>
+                        <select id="ar_station_filter_select"></select>
+                     </fieldset>
+                     <fieldset class="vw_half_width_fieldset stations">
+                        <legend>Plot display</legend>
+                        <div id="ar_station_click" class="button radio plot_button down" title="Click station icon to display its plot">Click</div><div id="ar_station_hover" class="button radio plot_button" title="Move cursor over station icon to display its plot">Hover</div>
+                     </fieldset>
+                     <fieldset class="vw_half_width_fieldset regions">
+                        <legend>Line width</legend>
+                        <div id="ar_line_width_slider" class="ar_opacity_slider"></div>
+                     </fieldset>
+                     <fieldset id="vw_line_colour_fieldset" class="vw_half_width_fieldset regions">
+                        <legend>Line colour</legend>
+                     </fieldset>
+                     <fieldset id="vw_fill_colour_fieldset" class="vw_half_width_fieldset regions basemap">
+                        <legend>Fill colour</legend>
+                     </fieldset>
+                     <fieldset id="vw_field_select_fieldset" class="vw_half_width_fieldset ivt">
+                        <legend>Select field</legend>
+                       <div id="ar_set_field_ivf" class="button radio field_mode down">IVF</div><div id="ar_set_field_ivt" class="button radio field_mode">IVT</div>
+                      </fieldset>
+                     <fieldset id="vw_show_scale_fieldset" class="vw_half_width_fieldset ivt stations">
+                        <legend>Show scale</legend>
+                        <div id="ar_show_ecar_scale_button" class="button toggle scale_button down">ECAR</div><div id="ar_show_ivt_scale_button" class="button toggle scale_button down">IVT</div>
+                     </fieldset>
+                  </fieldset>
+                  <div id="vw_control_show_hide" class="vw_button" title="Hide controls">&#9664;</div>
+               </div>
+               <div id="vw_layer_div"></div>
+               <div id="vw_map_container">
+                  <div id="vw_map_div">
+                     <!-- div id="ar_stations_mode" class="vw_half_width_fieldset stations">
+                        <div id="ar_stations_circle" class="button station_mode radio down" title="Show station circles"></div><div id="ar_stations_label" class="button station_mode radio" title="Show text values">#</div>
+                     </div -->
+                     </div>
+                  <!-- div id="ar_ivt_legend" class="map_legend"><img src="css/images/legends/ivt_legend_small.png" alt="IVT legend" height="100%"/></div -->
+                  <div id="ar_ecar_legend_container">
+                     <div id="ar_product_title" class="map_legend"><div id="ar_product_title_text"></div><div id="ar_product_subtitle_text"></div></div><br>
+                     <div id="ar_ecar_legend" class="map_legend"></div><br>
+                     <div id="ar_ecar_model_legend" class="map_legend"><div id="ar_ecar_model_label">RDPS 10km</div><div id="ar_ecar_run_label"></div></div>
+                  </div>
+               </div>
+               <div id="vw_status_bar"><div id="vw_map_info" class="status"></div><div id="vw_lat_lng" class="status"></div><div id="vw_map_camera" class="vw_camera" title="Click to save image of current map"></div></div>
+            </div>
+         </div>
+         <div id="ar_plot_tab">
+            <div id="ar_chart_container" class="ar_tab_content">
+               <div id="ar_chart_inner_container" class="ar_chart_inner_container">
+                  <div id="ar_chart_date"></div>
+                  <div id="ar_chart_title"></div>
+                  <div id="ar_chart_subtitle"></div>
+                  <div id="ar_upper_chart_container" class="tab_chart upper"></div>
+                  <div id="ar_lower_chart_container" class="tab_chart lower"></div>
+                  <div class="chart_legend"></div>
+                  <div class="watermark"></div>
+               </div>
+	    </div>
+            <div id="vw_plot_camera" class="vw_camera" title="Click to save image."></div>
+            <div class="ecar_scale"></div>
+         </div>
+         <div id="ar_document_tab">
+            <div id="ar_document_container"></div>
+         </div>
+         <div id="ar_guide_tab">
+            <div class="ar_tab_content">
+               <div class="ar_guide_content" id="ar_guide_ecar_scale_storm_total">
+		  <h3>ECCC Extratropical Cyclone Atmospheric River (ECAR) Scale Prototype (Version 3)</h3>
+                  <div class="ar_guide_disclaimer">THIS IS AN EXPERIMENTAL PRODUCT CREATED BY ENVIRONMENT AND CLIMATE CHANGE CANADA (ECCC). USE AT OWN RISK.</div>
+               </div>
+               <div class="ar_guide_content" id="ar_guide_ar_scale">
+                  <h3>AR Scale:</h3>
+                  <div class="ar_guide_disclaimer">THIS IS AN EXPERIMENTAL PRODUCT CREATED BY ENVIRONMENT AND CLIMATE CHANGE CANADA (ECCC). USE AT OWN RISK.</div>            
+               </div>
+               <div class="ar_guide_content" id="ar_guide_ecar_scale_weighted">
+                  <h3>ECAR Scale (Weighted):</h3>
+                  <div class="ar_guide_disclaimer">THIS IS AN EXPERIMENTAL PRODUCT CREATED BY ENVIRONMENT AND CLIMATE CHANGE CANADA (ECCC). USE AT OWN RISK.</div>
+               </div>
+               <div class="ar_guide_content" id="ar_guide_total_precip_return">
+                  <h3>Total Precipitation IDF (Intensity-Duration-Frequency) Products</h3>
+		  <h3>Total Precipitation IDF (Intensity-Duration-Frequency) Products</h3>
+                  <div class="ar_guide_disclaimer">THIS IS AN EXPERIMENTAL PRODUCT CREATED BY ENVIRONMENT AND CLIMATE CHANGE CANADA (ECCC). USE AT OWN RISK.</div>
+               </div>
+               <div class="ar_guide_content" id="ar_guide_alex">
+                  <h3>Climate Warming Impacts on Storminess 1950-2100</h3>
+                  <div class="ar_guide_disclaimer">This is an experimental product of Environment and Climate Change Canada. Use at your own risk.</div>
+                  <p></p>
+                  <p>For more information, please contact <a href="mailto:Mindy.Brugman@ec.gc.ca">Mindy Brugman</a>.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="ar_title_container"></div>
+      <div id="ar_popup">
+         <div id="ar_popup_title"></div>
+      </div>
+      <!--
+      <div id="ar_chart_popup" title="Drag to move chart or double-click to close">
+         <div class="ar_button close" title="Click to close popup (or click map)">x</div>
+         <div id="ar_chart_popup_contents">
+            <div id="ar_chart_popup_date"></div>
+            <div id="ar_chart_popup_title"></div>
+            <div id="ar_chart_popup_subtitle"></div>
+            <div id="ar_chart_popup_upper_chart_container" class="popup_chart upper"></div>
+            <div id="ar_chart_popup_lower_chart_container" class="popup_chart lower"></div>
+            <div class="chart_legend"></div>
+            <div class="watermark"></div>
+         </div>
+         <div class="vw_camera" title="Click to save plot image."></div>
+      </div>
+      -->
+      <a id="ar_feedback" class="button" href="mailto:ECAR@ec.gc.ca?subject=Feedback%20on%20AR_ECAR%20website&body=test this" title="Open your email program to report bugs or send us suggestions">Send feeback</a>
+   </body>
+</html>

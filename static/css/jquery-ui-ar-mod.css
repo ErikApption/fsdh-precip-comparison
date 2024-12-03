@@ -1,0 +1,93 @@
+
+.ui-widget-header
+   {
+   border: none;
+   border-bottom: 1px solid #dddddd;
+   background: transparent;
+   color: #333333;
+   font-weight: bold;
+   }
+
+.ui-widget-header.ui-slider-range
+   {
+   background: #007FFF !important;
+   }
+
+.inactive .ui-widget-header.ui-slider-range
+   {
+   background: #F0F0F0 !important;
+   }
+
+.ui-tabs-nav.ui-corner-all
+   {
+   border-bottom-left-radius: 0px;
+   border-bottom-right-radius: 0px;
+   }
+
+.ui-tabs .ui-tabs-panel
+   {
+   display: block;
+   border-width: 0;
+   padding: 0em 0em;
+   background: none;
+   }
+
+.ui-slider-horizontal .ui-slider-handle
+   {
+   top: -.4em;
+   margin-left: -.6em;
+   }
+
+.ui-accordion .ui-accordion-content
+   {
+   padding: 3px 5px 10px 5px;
+   }
+
+.ui-helper-reset
+   {
+   line-height: 1.1;
+   }
+
+.ui-accordion .ui-accordion-header
+   {
+   text-align: left;
+   }
+
+.ui-slider-horizontal
+   {
+   box-sizing: border-box;
+   cursor: pointer !important;
+   user-select: none;
+   height: 0.7em;
+   }
+
+.ui-slider .ui-slider-handle
+   {
+   position: absolute;
+   z-index: 2;
+   width: 18px !important;
+   height: 18px !important;
+   margin-top: -1px;
+   margin-left: -9px;
+   cursor: pointer;
+   -ms-touch-action: none;
+   touch-action: none;
+   }
+
+.ui-widget
+   {
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 14px;
+   }
+
+.ui-dialog-title
+   {
+   font-family: Arial,Helvetica,sans-serif;
+   font-size: 14px;
+   }
+
+.ui-front
+   {
+   z-index: 1000000000;
+   }
+
