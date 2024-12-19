@@ -7,7 +7,7 @@ services:
     #local setup
     #  - ./data:/mnt/fsdh/data
     #  - ./geojson:/mnt/fsdh/geojson
-    FSDH
+    #FSDH
       - datahub-blob:/mnt/fsdh
 
       
