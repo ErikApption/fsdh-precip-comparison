@@ -1,13 +1,13 @@
 services:
   web:
-    build: ghcr.io/erikapption/geomap-fsdh:latest
+    image: ghcr.io/erikapption/geomap-fsdh:latest
     ports:
       - "8080:80"
     volumes:
     #local setup
     #  - ./data:/mnt/fsdh/data
     #  - ./geojson:/mnt/fsdh/geojson
-    #FSDH
+    FSDH
       - datahub-blob:/mnt/fsdh
 
       
